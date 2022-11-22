@@ -1,0 +1,28 @@
+{
+  "dependencies": {
+    "inquirer": "^8.2.4"
+  },
+  "devDependencies": {
+    "jest": "^29.3.1"
+  },
+  "name": "engineers",
+  "description": "This project is a Node.js application that uses command-line input to generate HTML pages displaying profiles for each member of a software engineering team. It uses Object-Oriented Programming and Test-Driven Development. When a user starts the command-line application, they are prompted to enter information about their team members. When they have entered the information, an HTML page displaying the team members' information is generated.",
+  "version": "1.0.0",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "jest": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Abi-Queen/engineers.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Abi-Queen/engineers/issues"
+  },
+  "homepage": "https://github.com/Abi-Queen/engineers#readme"
+}
