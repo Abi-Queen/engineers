@@ -1,5 +1,10 @@
-const checkAlwaysEqual = require('../lib/Manager.js')
+const Manager = require('../lib/Manager')
 
-test('checks if 10 is equal to 10', () => {
-    expect(checkAlwaysEqual(10, 10)).toBe(true)
+test('creates a manager object', () => {
+    const manager = new Manager()
+
+    expect(employee.name).toEqual(expect.any(String))
+    expect(employee.id).toBeGreaterThan(0)
+    expect(employee.email).toEqual(expect.any(String))
+    expect(employee.officeNumber).toEqual(expect.any(String))
 })

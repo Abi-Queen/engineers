@@ -1,5 +1,10 @@
-const checkSometimesEqual = require('../lib/Intern.js')
+const Intern = require('../lib/Intern')
 
-test('checks if 10 is equal to 10', () => {
-    expect(checkSometimesEqual(10, 10)).toBe(true)
+test('creates an intern object', () => {
+    const intern = new Intern()
+
+    expect(employee.name).toEqual(expect.any(String))
+    expect(employee.id).toBeGreaterThan(0)
+    expect(employee.email).toEqual(expect.any(String))
+    expect(employee.school).toEqual(expect.any(String))
 })

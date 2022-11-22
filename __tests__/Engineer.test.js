@@ -1,5 +1,10 @@
-const checkNotEqual = require('../lib/Engineer.js')
+const Engineer = require('../lib/Engineer.js')
 
-test('checks if 10 is equal to 10', () => {
-    expect(checkNotEqual(10, 10)).toBe(true)
+test('creates an engineer object', () => {
+    const engineer = new Engineer()
+
+    expect(employee.name).toEqual(expect.any(String))
+    expect(employee.id).toBeGreaterThan(0)
+    expect(employee.email).toEqual(expect.any(String))
+    expect(employee.github).toEqual(expect.any(String))
 })
