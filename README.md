@@ -1,4 +1,5 @@
 # Software Engineering Team Profiles (OOP, TDD)
+![screenshot of app](./assets/ss.jpgss.jpg)
 
 ## Description
 This project is a Node.js application that uses a command-line interface to accept user input and then utilize that input to generate an HTML page. When a user starts the command-line application, they are prompted to enter information about their team members. When they have entered the information, a formatted HTML page displaying the team members' information is generated. The application uses Object-Oriented Programming and Test-Driven Development (with Jest). 
