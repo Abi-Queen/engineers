@@ -1,5 +1,6 @@
 const inquirer = require('inquirer')
 const path = require('path')
+const {writeFile} = require('./')
 const fs = require('fs')
 
 const Engineer = require('./lib/Engineer')
@@ -80,18 +81,99 @@ function appMenu() {
         inquirer.prompt([
             {
                 type: 'input',
-
+                name: 'engName',
+                message: 'What is the name of the engineer?',
+                validate: answer => {
+                    if(answer !== '') {
+                        return true;
+                    }
+                    return 'Please enter a name.'
+                }
+            },
+            {
+                type: 'input',
+                name: 'engId',
+                message: 'What is their id?'
+            },
+            {
+                type: 'input',
+                name: 'engEmail',
+                message: 'What is their email?'
+            },
+            {
+                type: 'input',
+                name: 'github',
+                message: 'What is their GitHub username?'
             }
-        ]).then()
+        ]).then(answers => {
+            const engineer = new Engineer (answers.engName, answers.engId, answers.engEmail, answers.github)
+            teamMembers.push(engineer)
+            createTeam()
+        })
     }
 
     function addIntern() {
         inquirer.prompt([
-
-        ]).then()
+            {
+                type: 'input',
+                name: 'intName',
+                message: 'What is the name of the engineer?',
+                validate: answer => {
+                    if(answer !== '') {
+                        return true;
+                    }
+                    return 'Please enter a name.'
+                }
+            },
+            {
+                type: 'input',
+                name: 'intId',
+                message: 'What is their id?'
+            },
+            {
+                type: 'input',
+                name: 'intEmail',
+                message: 'What is their email?'
+            },
+            {
+                type: 'input',
+                name: 'school',
+                message: 'What is their school?'
+            }
+        ]).then(answers => {
+            const intern = new Intern (answers.intName, answers.intId, answers.intEmail, answers.school)
+            teamMembers.push(intern)
+            createTeam()
+        })
     }
 
     function buildTeam() {
+        //create output directory if output path doesn't exist
+        if (!fs.existsSync(OUTPUT_DIR)) {
+            fs.mkdirSync(OUTPUT_DIR)
+        }
+        fs.writeFileSync(outputPath, render(teamMembers), 'utf-8')
 
     }
+    createManager()
 }
+
+appMenu()
+
+//create file
+const writeFile = fileContent => {
+    return new Promise((resolve, reject) => {
+        fs. writeFile('./dist/index.html', fileContent, err => {
+            if(err) {
+                reject(err)
+                return
+            }
+            resolve({
+                ok: true,
+                message: 'Page created.'
+            })
+        })
+    })
+}
+
+module.exports = { writeFile }

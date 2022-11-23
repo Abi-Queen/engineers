@@ -1,0 +1,11 @@
+.card-header {
+    background-color: rgb(92, 125, 218)
+}
+
+.card-body {
+    background-color:rgb(160, 180, 236)
+}
+
+.card {
+    border: solid 2px rgb(31, 42, 73)
+}
