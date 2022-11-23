@@ -1,6 +1,6 @@
 const inquirer = require('inquirer')
 const path = require('path')
-const {writeFile} = require('./')
+// const {writeFile} = require('./src/pageTemplate')
 const fs = require('fs')
 
 const Engineer = require('./lib/Engineer')
@@ -117,7 +117,7 @@ function appMenu() {
             {
                 type: 'input',
                 name: 'intName',
-                message: 'What is the name of the engineer?',
+                message: 'What is the name of the intern?',
                 validate: answer => {
                     if(answer !== '') {
                         return true;
