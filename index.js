@@ -10,7 +10,7 @@ const Manager = require('./lib/Manager')
 const OUTPUT_DIR = path.resolve(__dirname, 'output')
 const outputPath = path.join(OUTPUT_DIR, 'team.html')
 
-const render = require('./src/page-template.js')
+const render = require('./src/pageTemplate')
 
 const teamMembers = []
 
@@ -160,22 +160,20 @@ function appMenu() {
 
 appMenu()
 
-//create file
-const writeFile = fileContent => {
-    return new Promise((resolve, reject) => {
-        fs. writeFile('./dist/index.html', fileContent, err => {
-            if(err) {
-                reject(err)
-                return
-            }
-            resolve({
-                ok: true,
-                message: 'Page created.'
-            })
-        })
-    })
-}
-
-module.exports = { writeFile }
+// //create file
+// const writeFile = fileContent => {
+//     return new Promise((resolve, reject) => {
+//         fs. writeFile('./dist/index.html', fileContent, err => {
+//             if(err) {
+//                 reject(err)
+//                 return
+//             }
+//             resolve({
+//                 ok: true,
+//                 message: 'Page created.'
+//             })
+//         })
+//     })
+// }
 
  
