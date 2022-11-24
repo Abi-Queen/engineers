@@ -1,6 +1,22 @@
-module.exports = templateData => { 
+const Employee = require("../lib/Employee");
 
 const generateTeam = team => {
+    const cards = team.map((employee)=>{
+        switch (employee.getRole()) {
+            case 'Engineer':
+                return generateEngineer(employee)
+            case 'Intern':
+                return generateIntern(employee)
+            case 'Manager':
+                return generateManager(employee)
+            default:
+                break;
+        }
+    })
+    console.log(cards)
+    return cards.join('')
+}
+
     const generateEngineer = engineer => {
         return `
         <div class="card employee-card">
@@ -59,7 +75,6 @@ const generateTeam = team => {
         </div>
         `
     }
-}
 
 //export html from functions to generate entire page in dist
 module.exports = team => {
@@ -76,11 +91,8 @@ module.exports = team => {
     />
     <link
     rel="stylesheet"
-    href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
-    crossorigin="anonymous"
-  />
-    <link rel="stylesheet" href="./assets/css/style.css"/>
+    href="<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css"/>
     <title>Engineering Team</title>
   </head>
 
@@ -103,6 +115,4 @@ module.exports = team => {
   </body>
   </html>
     `
-}
-
 }
