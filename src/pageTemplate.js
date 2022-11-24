@@ -23,14 +23,15 @@ const generateTeam = team => {
             <div class="card-header">
                 <h2 class="card-title">${engineer.getName()}</h2>
                 <h3 class="card-title">
-                <i class="fa-thin fa-gears"></i>
+                <i class="fas fa-regular fa-gears"></i>
                 ${engineer.getRole()}
                 </h3>
             </div>
             <div class="card-body">
                 <ul class="list-group">
                     <li class="list-group-item">ID: ${engineer.getId()}</li>
-                    <li class="list-group-item">Office number: ${engineer.getGithub()}</li>
+                    <li class="list-group-item">Email:<a href="mailto:someone@example.com"> ${engineer.getEmail()}</a>
+                    <li class="list-group-item">GitHub: <a href="https://github.com/${engineer.getGithub()}" target="_blank">${engineer.getGithub()}</a></li>
                 </ul>
             </div>
         </div>
@@ -42,13 +43,13 @@ const generateTeam = team => {
             <div class="card-header">
                 <h2 class="card-title">${intern.getName()}</h2>
                 <h3 class="card-title">
-                <i class="fa-thin fa-graduation-cap"></i>
-                    ${intern.getRole()}
+                ${intern.getRole()}
                 </h3>
             </div>
             <div class="card-body">
                 <ul class="list-group">
                     <li class="list-group-item">ID: ${intern.getId()}</li>
+                    <li class="list-group-item">Email:<a href="mailto:someone@example.com"> ${intern.getEmail()}</a>
                     <li class="list-group-item">School: ${intern.getSchool()}</li>
                 </ul>
             </div>
@@ -62,13 +63,14 @@ const generateTeam = team => {
             <div class="card-header">
                 <h2 class="card-title">${manager.getName()}</h2>
                 <h3 class="card-title">
-                <i class="fa-thin fa-arrows-to-circle"></i>
+                <i class="fas fa-light fa-arrows-to-circle"></i>
                     ${manager.getRole()}
                 </h3>
             </div>
             <div class="card-body">
                 <ul class="list-group">
                     <li class="list-group-item">ID: ${manager.getId()}</li>
+                    <li class="list-group-item">Email:<a href="mailto:someone@example.com"> ${manager.getEmail()}</a>
                     <li class="list-group-item">Office number: ${manager.getOfficeNumber()}</li>
                 </ul>
             </div>
@@ -90,8 +92,11 @@ module.exports = team => {
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     />
     <link
-    rel="stylesheet"
-    href="<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+      crossorigin="anonymous"
+    />
     <link rel="stylesheet" href="style.css"/>
     <title>Engineering Team</title>
   </head>
@@ -101,13 +106,13 @@ module.exports = team => {
     <div class="row">
         <div class="col-12 jumbotron mb-3 team-heading">
             <h1 class="text-center">
-            <i class="fa-thin fa-handshake"></i>
+            <i class="fas fa-light fa-handshake"></i>
             Engineering Team</h1>
         </div>
     </div>
     <div class="container">
         <div class="row">
-            <div class="team-area col-12 d-flex justify-content-center">
+            <div class="team-area col-12 d-flex justify-content-around">
             ${generateTeam(team)}
             </div>
         </div>
