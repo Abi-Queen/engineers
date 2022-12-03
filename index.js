@@ -14,6 +14,7 @@ const render = require('./src/pageTemplate')
 
 const teamMembers = []
 
+//main inquirer prompt for user input, start with manager
 function appMenu() {
     function createManager() {
         console.log('Please build your team')
@@ -44,6 +45,7 @@ function appMenu() {
                 name: 'officeNumber',
                 message: 'What is their office number?'
             }
+            //send manager input to Manager constructor and add to teamMembers array
         ]).then(answers => {
             const manager = new Manager(answers.mgrName, answers.mgrId, answers.mgrEmail, answers.officeNumber)
             teamMembers.push(manager)
@@ -51,6 +53,7 @@ function appMenu() {
         })
     }
 
+    //prompt to select which team member to enter//
     function createTeam() {
         inquirer.prompt([
             {
@@ -77,6 +80,7 @@ function appMenu() {
         })
     }
 
+    //prompts for adding engineer info
     function addEngineer() {
         inquirer.prompt([
             {
@@ -105,6 +109,7 @@ function appMenu() {
                 name: 'github',
                 message: 'What is their GitHub username?'
             }
+            //send user input to Engineer constructor and teamMembers array
         ]).then(answers => {
             const engineer = new Engineer (answers.engName, answers.engId, answers.engEmail, answers.github)
             teamMembers.push(engineer)
@@ -112,6 +117,7 @@ function appMenu() {
         })
     }
 
+    //prompts for adding intern info
     function addIntern() {
         inquirer.prompt([
             {
@@ -140,6 +146,7 @@ function appMenu() {
                 name: 'school',
                 message: 'What is their school?'
             }
+            //send intern input to Intern constructor and teamMembers array
         ]).then(answers => {
             const intern = new Intern (answers.intName, answers.intId, answers.intEmail, answers.school)
             teamMembers.push(intern)
@@ -147,6 +154,7 @@ function appMenu() {
         })
     }
 
+    //send user input to html in DIR
     function buildTeam() {
         //create output directory if output path doesn't exist
         if (!fs.existsSync(OUTPUT_DIR)) {
